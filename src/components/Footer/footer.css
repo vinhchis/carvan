@@ -1,13 +1,13 @@
 footer {
-  position: fixed;
+  /* position: absolute;
   left: 0;
-  bottom: 0;
+  bottom: 0; */
+  width: 100%;
+  padding-bottom: 10px;
   width: 100%;
   align-items: center;
   background: #e25e3e;
   color: #fff;
-  padding-bottom: 10px;
-  
 }
 
 /* Social */

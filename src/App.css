@@ -1,4 +1,4 @@
-@import '~bootstrap/dist/css/bootstrap.min.css';
+@import "~bootstrap/dist/css/bootstrap.min.css";
 
 /* Reset CSS */
 * {
@@ -19,4 +19,9 @@
   --main-color-2: #ff9b50;
   --main-color-3: #e25e3e;
   --main-color-4: #c63d2f;
+}
+
+body {
+  min-height: 100vh;
+  position: relative;
 }
