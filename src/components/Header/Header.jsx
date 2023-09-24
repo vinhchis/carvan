@@ -1,8 +1,8 @@
 import { Nav, Navbar } from "react-bootstrap";
-import Logo from "../assets/image/logo/logofin.png";
+import Logo from "../../assets/image/logo/logofin.png";
 import { FaUserPlus } from "react-icons/fa";
 import { FaUserCircle } from "react-icons/fa";
-import "../assets/css/header.css";
+import "./header.css";
 
 function Header() {
   return (

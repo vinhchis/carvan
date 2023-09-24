@@ -1,13 +1,16 @@
 footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
   width: 100%;
   align-items: center;
   background: #e25e3e;
   color: #fff;
   padding-bottom: 10px;
+  
 }
 
 /* Social */
-
 .social {
   width: 100%;
   text-align: center;
@@ -35,4 +38,3 @@ footer {
   font-size: 20px;
   text-align: center;
 }
-

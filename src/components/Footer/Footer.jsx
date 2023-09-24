@@ -5,7 +5,7 @@ import {
   FaSquareYoutube,
   FaLinkedinIn,
 } from "react-icons/fa6";
-import "../assets/css/footer.css"
+import "./footer.css"
 
 function Footer() {
   return (
@@ -17,7 +17,7 @@ function Footer() {
         Copyright © 2023 CARVAN Company – Welcome to CARVAN, your trusted
         destination for high-quality preowned cars. With a passion for
         automotive excellence, we offer a curated selection of vehicles to meet
-        your driving needs.{" "}
+        your driving needs.
       </p>
       <p>
         <div className="social">
