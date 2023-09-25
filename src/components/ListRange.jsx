@@ -1,5 +1,5 @@
 import { CardGroup } from "react-bootstrap";
-import Range from "./cards/Range/Range";
+import Range from "./Cards/Range/Range";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import SearchBar from "./SearchBar/SearchBar";

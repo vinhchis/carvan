@@ -2,8 +2,7 @@ import { Form, Button, Col, Row } from "react-bootstrap";
 
 function SearchBar() {
   return (
-    <div>
-      <Form>
+      <Form className="my-3">
         <Row>
           <Col>
             <Form.Group>
@@ -17,7 +16,6 @@ function SearchBar() {
           </Col>
         </Row>
       </Form>
-    </div>
   );
 }
 
