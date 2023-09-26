@@ -12,24 +12,19 @@ import {
 } from "react-bootstrap";
 import SearchBar from "../SearchBar/SearchBar";
 import CarImg from "../../assets/image/cars/Vinfast.webp";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import CarDB from "../../data/cars.json"
 
-function Car() {
-  let Car = {
-    id: 1,
-    brand: "Toyota",
-    name: "Corolla",
-    year: 2019,
-    price: "$15,000",
-    class: "Sedan",
-    fuel: "Gas",
-    seat: 5,
-    registrationDate: "2019-04-15",
-    odo: "30,000",
-    warrantyDate: "2023-04-15",
-    transmission: "Automatic",
-    image: "car1.jpg",
-  };
+function Car({carInfo}) {
+  const [car, setCar] = useState(""); 
+
+  console.log(car);
+
+  useEffect(()=>{
+    setCar(carInfo)
+  });
+
+
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -37,14 +32,14 @@ function Car() {
   return (
     <>
       <Card className="text-center" style={{ width: "20rem" }}>
-        <Card.Header className="text-end">{Car.price}</Card.Header>
+        <Card.Header className="text-end">{car.price}</Card.Header>
         <Card.Img variant="top" src={CarImg} />
         <Card.Body>
-          <Card.Title>{`${Car.year} ${Car.brand} ${Car.name}`}</Card.Title>
+          <Card.Title>{`${car.year} ${car.brand} ${car.name}`}</Card.Title>
           <ListGroup>
-            <ListGroup.Item>{Car.odo} km</ListGroup.Item>
-            <ListGroup.Item>{Car.transmission}</ListGroup.Item>
-            <ListGroup.Item>{Car.fuel}</ListGroup.Item>
+            <ListGroup.Item>{car.odo} km</ListGroup.Item>
+            <ListGroup.Item>{car.transmission}</ListGroup.Item>
+            <ListGroup.Item>{car.fuel}</ListGroup.Item>
           </ListGroup>
           <ButtonGroup size="lg" className="mb-2 my-2">
             <Button
@@ -68,7 +63,7 @@ function Car() {
         animation={false}
       >
         <Modal.Header closeButton>
-          <Modal.Title>{`${Car.year} ${Car.brand} ${Car.name}`}</Modal.Title>
+          <Modal.Title>{`${car.year} ${car.brand} ${car.name}`}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Image variant="top" src={CarImg} />
@@ -107,11 +102,11 @@ function Car() {
                     <th>value</th>
                   </thead>
                   <tbody>
-                    {Object.keys(Car).map((key) =>
+                    {Object.keys(car).map((key) =>
                       key != "id" && key != "image" ? (
                         <tr key={key}>
                           <td>{key}</td>
-                          <td>{Car[key]}</td>
+                          <td>{car[key]}</td>
                         </tr>
                       ) : null
                     )}
@@ -136,10 +131,15 @@ function Car() {
 
 
 function ListCar() {
+  const [cars, setCars] = useState(CarDB);
+
   return (
     <div className="list-car col-10 offset-1">
       <SearchBar />
-      <div>
+      {cars.map(car => (
+        <Car carInfo={car}/>
+      ))}
+      {/* <div>
         <Row className="my-4">
           <Col ms={4}>
             <Car />
@@ -173,7 +173,7 @@ function ListCar() {
             <Car />
           </Col>
         </Row>
-      </div>
+      </div> */}
     </div>
   );
 }

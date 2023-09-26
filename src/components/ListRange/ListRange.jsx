@@ -33,7 +33,7 @@ function Range({range}) {
   return (
     <Card className="text-center" style={{ width: "18rem" }}>
       {/* <Card.Header>{`${range.count} cars`}</Card.Header> */}
-      <Card.Img variant="top" src={imgLink} />
+      <Card.Img variant="top" src={SUVImg} />
       <Card.Body>
         <Card.Title>{range.name}</Card.Title>
         <Card.Text class="text-start">{range.desc}</Card.Text>
