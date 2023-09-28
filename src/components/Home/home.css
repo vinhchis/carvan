@@ -1,0 +1,7 @@
+.dropdown-menu.show {
+  background: linear-gradient(#ffbb5c, #ff9b50, #e25e3e, #c63d2f);
+}
+
+.navdropdown-item:hover {
+  background-color: #c63d2f;
+}

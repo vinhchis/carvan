@@ -6,16 +6,17 @@ import Card from "react-bootstrap/Card";
 import SearchBar from "../SearchBar/SearchBar";
 
 import RangeDB from "../../data/ranges.json"
-
 import { useEffect, useState } from "react";
 
 function Range({range}) {
-  // let range = {
-  //   id: 1,
-  //   name: "SUV",
-  //   quantity : 12,
-  //   desc: "Versatile, spacious, and rugged vehicles designed for diverse lifestyles, blending car comfort with off-road capability.",
-  // };
+  /*
+  let range = {
+    id: 1,
+    name: "SUV",
+    quantity : 12,
+    desc: "Versatile, spacious, and rugged vehicles designed for diverse lifestyles, blending car comfort with off-road capability.",
+  };
+  */
 
   return (
     <Card className="text-center col-sm-4 mx-1" >
