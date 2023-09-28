@@ -14,6 +14,7 @@ import About from "./components/About/About";
 // Data
 import CarDB from "./data/cars.json";
 import RangeDB from "./data/ranges.json"
+import CarDetail from "./components/CarDetail/CarDetail";
 
 
 function App() {
@@ -34,7 +35,9 @@ function App() {
 
         <Route path="/cars" element={<ListCar cars={cars}/>}/>
         <Route path="/cars/ranges/:id" element={<ListCar cars={cars}/>} />
+        <Route path="/cars/:id" element={<CarDetail cars={cars}/>} />
 
+  
         <Route path="/signIn" element={<SignIn/>}/>
         <Route path="/signUp" element={<SignUp/>}/>
         <Route path="/about" element={<About/>}/>
