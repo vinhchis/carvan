@@ -5,24 +5,11 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import SearchBar from "../SearchBar/SearchBar";
 
-import RangesDB from "../../data/ranges.json"
+import RangeDB from "../../data/ranges.json"
 
-import ConvertibleImg from "../../assets/image/ranges/Convertible.svg";
-import CoupleImg from "../../assets/image/ranges/Couple.svg";
-import HatchbackImg from "../../assets/image/ranges/Hatchback.svg";
-import MPVImg from "../../assets/image/ranges/MPV.svg";
-import SedanImg from "../../assets/image/ranges/Sedan.svg";
-import SUVImg from "../../assets/image/ranges/SUV.svg";
-import TrunkImg from "../../assets/image/ranges/Trunk.svg";
-import VANImg from "../../assets/image/ranges/VAN.svg";
-import WagonImg from "../../assets/image/ranges/Wagon.svg";
-
-
-
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function Range({range}) {
-  const imgLink = `../../assets/img/ranges/${range.name}.png`;
   // let range = {
   //   id: 1,
   //   name: "SUV",
@@ -31,9 +18,10 @@ function Range({range}) {
   // };
 
   return (
-    <Card className="text-center" style={{ width: "18rem" }}>
+    <Card className="text-center col-sm-4 mx-1" >
       {/* <Card.Header>{`${range.count} cars`}</Card.Header> */}
-      <Card.Img variant="top" src={SUVImg} />
+      <Card.Img variant="top" src={require(`../../assets/image/ranges/${range.name}.svg`)} />
+
       <Card.Body>
         <Card.Title>{range.name}</Card.Title>
         <Card.Text class="text-start">{range.desc}</Card.Text>
@@ -45,53 +33,24 @@ function Range({range}) {
 }
 
 function ListRange() {
-  const [ranges, setRanges] = useState(RangesDB);
+  const [ranges, setRanges] = useState(RangeDB);
 
-  // console.log(ranges)
+  useEffect(() => {
+    setRanges(RangeDB) 
+  },[])
+
+  console.log(ranges);
 
   return (
-    <div className="list-range col-10 offset-1">
+    <div className="list-range col-sm-10 offset-1">
       <SearchBar />
-      {/* <Range range={ranges[0]}/>
-      {ranges.map((x,range) => (
-        x % 4 ? null : null,
+      <div className="row">
+      {ranges.map((range) => (
         <Range range={range}/>
-       ))} */}
-      <div>
-        <Row className="my-4">
-          <Col ms={3}>
-            <Range range={ranges[0]} />
-          </Col>
-          <Col ms={3}>
-            <Range range={ranges[1]} />
-          </Col>
-          <Col ms={3}>
-            <Range range={ranges[2]} />
-          </Col>
-          <Col ms={3}>
-            <Range range={ranges[3]} />
-          </Col>
-        </Row>
-        <Row className="my-4">
-          <Col ms={3}>
-            <Range range={ranges[4]} />
-          </Col>
-          <Col ms={3}>
-            <Range range={ranges[5]} />
-          </Col>
-          <Col ms={3}>
-            <Range range={ranges[6]} />
-          </Col>
-          <Col ms={3}>
-            <Range range={ranges[7]} />
-          </Col>
-        </Row>
-        <Row className="my-4">
-          <Col ms={3}>
-            <Range range={ranges[8]} />
-          </Col>
-        </Row>
+       ))}
       </div>
+      
+      
     </div>
   );
 }
