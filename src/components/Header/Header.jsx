@@ -14,9 +14,9 @@ function Header() {
       <Navbar.Collapse id="basic-navbar-nav" className="navbar-collapse">
         <Nav className="me-auto">
           <Nav.Link href="/brands">Brands</Nav.Link>
-          <Nav.Link href="/rangeofcar">Range of Cars</Nav.Link>
-          <Nav.Link href="/preowned">PreOwned Cars</Nav.Link>
-          <Nav.Link href="/aboutcarvan">About CARVAN</Nav.Link>
+          <Nav.Link href="/ranges">Range of Cars</Nav.Link>
+          <Nav.Link href="/cars">PreOwned Cars</Nav.Link>
+          <Nav.Link href="/about">About CARVAN</Nav.Link>
           <Nav.Link href="mailto:anhtu19072000@gmail.com">Contact Us</Nav.Link>
           <Nav.Link href="/signup">
             <FaUserPlus />
@@ -29,7 +29,7 @@ function Header() {
         </Nav>
       </Navbar.Collapse>
     </Navbar>
-  );  
+  );
 }
 
 export default Header;

@@ -1,0 +1,7 @@
+.range {
+    box-shadow: 5px 5px 5px var(--main-color-4);
+}
+.range:hover {
+    
+    transform: translateY(-5px);
+}

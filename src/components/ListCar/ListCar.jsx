@@ -10,20 +10,18 @@ import {
   Row,
   Table,
 } from "react-bootstrap";
+import { useEffect, useState } from "react";
 import SearchBar from "../SearchBar/SearchBar";
 import CarImg from "../../assets/image/cars/Vinfast.webp";
-import { useEffect, useState } from "react";
-import CarDB from "../../data/cars.json"
+import { useParams } from "react-router-dom";
 
-function Car({carInfo}) {
-  const [car, setCar] = useState(""); 
+function Car({ carInfo }) {
+  const [car, setCar] = useState({});
 
-  console.log(car);
-
-  useEffect(()=>{
-    setCar(carInfo)
-  });
-
+  // run only once
+  useEffect(() => {
+    setCar(carInfo);
+  }, []);
 
   const [show, setShow] = useState(false);
 
@@ -42,10 +40,7 @@ function Car({carInfo}) {
             <ListGroup.Item>{car.fuel}</ListGroup.Item>
           </ListGroup>
           <ButtonGroup size="lg" className="mb-2 my-2">
-            <Button
-              variant="info"
-              onClick={handleShow}
-            >
+            <Button variant="info" onClick={handleShow}>
               Detail
             </Button>
             <Button variant="secondary">Add to Cart</Button>
@@ -129,51 +124,15 @@ function Car({carInfo}) {
   );
 }
 
-
-function ListCar() {
-  const [cars, setCars] = useState(CarDB);
+function ListCar({cars}) {
+  
 
   return (
     <div className="list-car col-10 offset-1">
       <SearchBar />
-      {cars.map(car => (
-        <Car carInfo={car}/>
+      {cars.map((car) => (
+        <Car carInfo={car} key={car.id}/>
       ))}
-      {/* <div>
-        <Row className="my-4">
-          <Col ms={4}>
-            <Car />
-          </Col>
-          <Col ms={4}>
-            <Car />
-          </Col>
-          <Col ms={4}>
-            <Car />
-          </Col>
-        </Row>
-        <Row className="my-4">
-          <Col ms={4}>
-            <Car />
-          </Col>
-          <Col ms={4}>
-            <Car />
-          </Col>
-          <Col ms={4}>
-            <Car />
-          </Col>
-        </Row>
-        <Row className="my-4">
-          <Col ms={4}>
-            <Car />
-          </Col>
-          <Col ms={4}>
-            <Car />
-          </Col>
-          <Col ms={4}>
-            <Car />
-          </Col>
-        </Row>
-      </div> */}
     </div>
   );
 }

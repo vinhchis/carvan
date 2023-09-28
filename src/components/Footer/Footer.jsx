@@ -5,7 +5,7 @@ import {
   FaSquareYoutube,
   FaLinkedinIn,
 } from "react-icons/fa6";
-import "./footer.css"
+import "./footer.css";
 
 function Footer() {
   return (
@@ -19,15 +19,14 @@ function Footer() {
         automotive excellence, we offer a curated selection of vehicles to meet
         your driving needs.
       </p>
-      <p>
-        <div className="social">
-          <FaFacebook />
-          <FaInstagram />
-          <FaSquareTwitter />
-          <FaSquareYoutube />
-          <FaLinkedinIn />
-        </div>
-      </p>
+
+      <div className="social">
+        <FaFacebook />
+        <FaInstagram />
+        <FaSquareTwitter />
+        <FaSquareYoutube />
+        <FaLinkedinIn />
+      </div>
     </footer>
   );
 }
