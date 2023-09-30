@@ -3,9 +3,10 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
-import SearchBar from "../SearchBar/SearchBar";
 
 import "./listRange.css";
+import RangeDB from "../../data/ranges.json"
+
 
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -23,7 +24,7 @@ function Range({ range }) {
       <Card.Body>
         <Card.Title>{range.name}</Card.Title>
         <Card.Text class="text-start range-desc">{range.desc}</Card.Text>
-        <Button
+        <Button className="button-list"
           variant="primary"
           onClick={() => navigate(`/cars/ranges/${range.id}`)}
         >
@@ -35,15 +36,17 @@ function Range({ range }) {
   );
 }
 
-function ListRange({ ranges }) {
+function ListRange() {
+  const [ranges, setRanges] = useState([]);
+
+  useEffect(() => {
+    setRanges(RangeDB);
+  })
   return (
     <Container className="list-range">
       <Row>
-        <SearchBar />
-      </Row>
-      <Row>
         {ranges.map((range) => (
-          <Col xl={4} className="mb-4">
+          <Col xl={4} className="my-4">
             <Range range={range} />
           </Col>
         ))}

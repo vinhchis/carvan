@@ -1,60 +1,44 @@
 import {
-  Button,
-  ButtonGroup,
-  Card,
   Col,
   Container,
-  Image,
-  ListGroup,
-  Modal,
   Row,
-  Table,
 } from "react-bootstrap";
 import { useEffect, useState } from "react";
-import SearchBar from "../SearchBar/SearchBar";
-import CarImg from "../../assets/image/cars/Vinfast.webp";
-import { useNavigate, useParams } from "react-router-dom";
+import SearchBar from "../Search/SearchBar";
 
 import "./listCar.css"
 
-function Car({ carInfo }) {
-  const [car, setCar] = useState({});
-  const navigate = useNavigate();
+import CarDB from "../../data/cars.json";
+import Buttons from "./Buttons";
+import Car from "../Car/Car";
 
-  // run only once
+
+function ListCar() {
+  const [cars, setCars] = useState([]);
+  // make filter (year)
+  const menuItems = [...new Set(cars.map((car) => car.year))];
+
+  const filterItem = (curcat) => {
+    const newItem = cars.filter((newVal) => {
+      return newVal.year === curcat;
+    });
+    setCars(newItem);
+  };
+
   useEffect(() => {
-    setCar(carInfo);
-  }, []);
-
-  const [show, setShow] = useState(false);
-  return (
-    <Card className="text-center car-card">
-      <Card.Header className="text-end car-price">{car.price}$</Card.Header>
-      <Card.Img variant="top" src={CarImg} />
-      <Card.Body>
-        <Card.Title>{`${car.year} ${car.brand} ${car.name}`}</Card.Title>
-        <ListGroup>
-          <ListGroup.Item>{car.odo} km</ListGroup.Item>
-          <ListGroup.Item>{car.transmission}</ListGroup.Item>
-          <ListGroup.Item>{car.fuel}</ListGroup.Item>
-        </ListGroup>
-        <ButtonGroup size="lg" className="my-2">
-          <Button variant="info" onClick={() => navigate(`/cars/${car.id}`)}>
-            Detail
-          </Button>
-          <Button variant="secondary">Add to Cart</Button>
-        </ButtonGroup>
-      </Card.Body>
-      <Card.Footer className="text-muted">Sale</Card.Footer>
-    </Card>
-  );
-}
-
-function ListCar({ cars }) {
+    setCars(CarDB);
+  },[])
   return (
     <Container className="list-car">
       <Row>
         <SearchBar />
+      </Row>
+      <Row>
+      <Buttons
+            filterItem={filterItem}
+            setItem={setCars}
+            menuItems={menuItems}
+          />
       </Row>
       <Row>
         {cars.map((car) => (
@@ -63,7 +47,7 @@ function ListCar({ cars }) {
           </Col>
         ))}
       </Row>
-    </Container>
+    </Container>  
   );
 }
 

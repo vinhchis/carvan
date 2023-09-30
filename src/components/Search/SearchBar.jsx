@@ -6,7 +6,7 @@ function SearchBar() {
         <Row>
           <Col>
             <Form.Group>
-              <Form.Control type="text" placeholder="Search range of car " />
+              <Form.Control type="text" placeholder="Search by name" />
             </Form.Group>
           </Col>
           <Col>

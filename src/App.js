@@ -10,32 +10,20 @@ import ListCar from "./components/ListCar/ListCar";
 import SignIn from "./components/SignIn/SignIn";
 import SignUp from "./components/SignUp/SignUp";
 import About from "./components/About/About";
-
-// Data
-import CarDB from "./data/cars.json";
-import RangeDB from "./data/ranges.json"
 import CarDetail from "./components/CarDetail/CarDetail";
 
 
 function App() {
-  const [cars, setCars] = useState([]);
-  const [ranges, setRanges] = useState([]);
-
-  useEffect(() => {
-    setCars(CarDB);
-    setRanges(RangeDB); 
-  }, []);
-
   return (
     <>
       <Header/>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/ranges" element={<ListRange ranges={ranges} />} />
+        <Route path="/ranges" element={<ListRange/>} />
 
-        <Route path="/cars" element={<ListCar cars={cars}/>}/>
-        <Route path="/cars/ranges/:id" element={<ListCar cars={cars}/>} />
-        <Route path="/cars/:id" element={<CarDetail cars={cars}/>} />
+        <Route path="/cars" element={<ListCar/>}/>
+        <Route path="/cars/ranges/:id" element={<ListCar/>} />
+        <Route path="/cars/:id" element={<CarDetail/>} />
 
   
         <Route path="/signIn" element={<SignIn/>}/>

@@ -1,12 +1,21 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button, Carousel, Col, Container, Image, Row, Table } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import CarImg from "../../assets/image/cars/Vinfast.webp";
+import CarDB from "../../data/cars.json"
 import "./carDetail.css";
-function CarDetail({ cars }) {
+function CarDetail() {
   const { id } = useParams();
+  const [car, setCar] = useState({});
 
-  const car = cars[id];
+  const getCar = () => {
+    setCar(CarDB[id]);
+  }
+
+  useEffect(() => {
+    getCar();
+  }, [])
+
   return (
     <Container className="car-detail my-3" >
       <Row>
@@ -64,7 +73,6 @@ function CarDetail({ cars }) {
               trusted partner on the road.
             </p>
           </div>
-
           <Button variant="secondary">Compare</Button>
           <Button variant="primary">Add to Cart</Button>
         </Col>
