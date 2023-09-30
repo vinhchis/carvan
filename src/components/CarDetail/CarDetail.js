@@ -9,7 +9,7 @@ function CarDetail() {
   const [car, setCar] = useState({});
 
   const getCar = () => {
-    setCar(CarDB[id]);
+    setCar(CarDB[id-1]);
   }
 
   useEffect(() => {

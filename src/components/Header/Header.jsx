@@ -7,7 +7,7 @@ import "./header.css";
 function Header() {
   return (
     <Navbar expand="lg" className="bg-body-tertiary navbar-item">
-      <Navbar.Brand href="/homepage">
+      <Navbar.Brand href="/">
         <img src={Logo} alt="CARVAN_Logo" width={"100px"} />
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />

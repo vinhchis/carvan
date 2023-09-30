@@ -3,17 +3,11 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
-
 import "./listRange.css";
-import RangeDB from "../../data/ranges.json"
-
-
-import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 function Range({ range }) {
   const navigate = useNavigate();
-
   return (
     <Card className="range text-center">
       {/* <Card.Header>{`${range.count} cars`}</Card.Header> */}
@@ -24,9 +18,12 @@ function Range({ range }) {
       <Card.Body>
         <Card.Title>{range.name}</Card.Title>
         <Card.Text class="text-start range-desc">{range.desc}</Card.Text>
-        <Button className="button-list"
+        <Button
+          className="button-list"
           variant="primary"
-          onClick={() => navigate(`/cars/ranges/${range.id}`)}
+          onClick={() => {
+            navigate(`/cars/ranges/${range.name}`);
+          }}
         >
           List Car
         </Button>
@@ -36,12 +33,7 @@ function Range({ range }) {
   );
 }
 
-function ListRange() {
-  const [ranges, setRanges] = useState([]);
-
-  useEffect(() => {
-    setRanges(RangeDB);
-  })
+function ListRange({ ranges }) {
   return (
     <Container className="list-range">
       <Row>
