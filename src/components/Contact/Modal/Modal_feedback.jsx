@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-import '../about/popup.css'
-import { FaToolbox } from "react-icons/fa";
+import { FaRegAddressCard} from "react-icons/fa";
+import './modal.css'
 
-function Modalopportunity() {
+function Modalfeedback() {
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
@@ -13,17 +13,16 @@ function Modalopportunity() {
 
         <div className="mapouter">
             <Button variant="secondary" onClick={handleShow}>
-                <FaToolbox />
+                <FaRegAddressCard/>
             </Button>
 
             <Modal show={show} onHide={handleClose}>
                 <Modal.Body>
-                <p>Hello</p>
-
+                    <p>Hello</p>
                 </Modal.Body>
             </Modal>
         </div>
     );
 }
 
-export default Modalopportunity;
+export default Modalfeedback;

@@ -17,7 +17,7 @@ function Header() {
           <Nav.Link href="/ranges">Range of Cars</Nav.Link>
           <Nav.Link href="/cars">PreOwned Cars</Nav.Link>
           <Nav.Link href="/about">About CARVAN</Nav.Link>
-          <Nav.Link href="mailto:anhtu19072000@gmail.com">Contact Us</Nav.Link>
+          <Nav.Link href="/contact">Contact Us</Nav.Link>
           <Nav.Link href="/signup">
             <FaUserPlus />
             SignUp

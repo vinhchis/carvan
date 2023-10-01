@@ -11,6 +11,7 @@ import SignIn from "./components/SignIn/SignIn";
 import SignUp from "./components/SignUp/SignUp";
 import About from "./components/About/About";
 import CarDetail from "./components/CarDetail/CarDetail";
+import Contact from "./components/Contact/Contact";
 
 
 function App() {
@@ -23,9 +24,11 @@ function App() {
         <Route path="/ranges/:rName" element={<ListCar/>}/>
         <Route path="/cars" element={<ListCar />}/>
         <Route path="/cars/:id" element={<CarDetail/>} />
+        <Route path="/about" element={<About/>}/>
+        <Route path="/contact" element={<Contact/>}/>
         <Route path="/signIn" element={<SignIn/>}/>
         <Route path="/signUp" element={<SignUp/>}/>
-        <Route path="/about" element={<About/>}/>
+
       </Routes>
       <Footer/>
     </>

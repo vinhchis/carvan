@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-import '../about/popup.css'
-import { FaPhoneAlt } from "react-icons/fa";
+import { FaToolbox } from "react-icons/fa";
+import './modal.css'
 
-function Modalchat() {
+function Modalopportunity() {
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
@@ -13,7 +13,7 @@ function Modalchat() {
 
         <div className="mapouter">
             <Button variant="secondary" onClick={handleShow}>
-                <FaPhoneAlt />
+                <FaToolbox />
             </Button>
 
             <Modal show={show} onHide={handleClose}>
@@ -26,4 +26,4 @@ function Modalchat() {
     );
 }
 
-export default Modalchat;
+export default Modalopportunity;

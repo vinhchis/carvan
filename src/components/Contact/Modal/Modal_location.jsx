@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-import '../about/popup.css'
 import { FaSearchLocation } from "react-icons/fa";
+import './modal.css'
 
 function Modallocation() {
     const [show, setShow] = useState(false);
