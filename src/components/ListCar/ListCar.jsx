@@ -7,11 +7,17 @@ import SearchBar from "../Search/SearchBar";
 
 import "./listCar.css";
 import { useParams } from "react-router-dom";
+import CarDB from "../../data/cars.json"
 
-function ListCar({carList}) {
-  const {rangeN} = useParams();
+function ListCar() {
+  // const {rangeN} = useParams();
   const [cars, setCars] = useState([]);
-    // make filter (year)
+
+  useEffect(() => {
+    setCars(CarDB);
+  },[]);
+
+  //  filter by year
   const menuItems = [...new Set(cars.map((car) => car.year))];
   const filterItem = (yearSelected) => {
     const newItem = cars.filter((newVal) => {
@@ -19,26 +25,6 @@ function ListCar({carList}) {
     });
     setCars(newItem);
   };
-  const getCarsByRange = (range) => {
-      setCars(cars.filter(car => car.class == range));
-  }
-
-  useEffect(() => {
-    setCars(carList);
-    console.log("1")
-  }, [carList]);
-
-
-  if(rangeN){
-    useEffect(() => {
-      getCarsByRange(rangeN);
-      console.log("2");
-    }, [rangeN]);
-  }
-
-  
-
-  
 
   return (
     <Container className="list-car">

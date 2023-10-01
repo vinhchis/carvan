@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom";
 import CarImg from "../../assets/image/cars/Vinfast.webp";
 import "./car.css"
 
+import {BsFuelPumpDiesel} from "react-icons/bs"
+
 function Car({ carInfo }) {
   const [car, setCar] = useState({});
   const navigate = useNavigate();
@@ -21,7 +23,7 @@ function Car({ carInfo }) {
         <ListGroup>
           <ListGroup.Item>{car.odo} km</ListGroup.Item>
           <ListGroup.Item>{car.transmission}</ListGroup.Item>
-          <ListGroup.Item>{car.fuel}</ListGroup.Item>
+          <ListGroup.Item><BsFuelPumpDiesel/>{car.fuel}</ListGroup.Item>
         </ListGroup>
         <ButtonGroup size="lg" className="my-2">
           <Button variant="info" className="button-detail" onClick={() => navigate(`/cars/${car.id}`)}>
