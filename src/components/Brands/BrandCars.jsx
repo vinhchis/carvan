@@ -2,8 +2,9 @@ import Car from "../Car/Car";
 import CarDB from "../../data/cars.json";
 import React, { useDebugValue, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import "../Car/car.css";
 import { Col, Container, Row } from "react-bootstrap";
+
+import "./brandcars.css"
 
 const BrandCars = () => {
   const { brand } = useParams();
@@ -16,17 +17,22 @@ const BrandCars = () => {
     setCars(brandCars);
   }, [brand]);
   return (
-    <div className="container">
-      {cars.length ? (
-        cars.map((car) => (
-          <Col xl={3} className="mb-5">
-            <Car key={car.id} carInfo={car} />
-          </Col>
-        ))
-      ) : (
-        <p>No cars available for {brand}</p>
-      )}
-    </div>
+    <Container>
+      <Row>
+        <p className="count">There are {cars.length} {brand.toUpperCase()} cars</p>
+      </Row>
+       <Row>
+        {cars.length > 0
+          ? cars.map((car) => (
+              <Col xl={3} className="mb-3">
+                <Car carInfo={car} key={car.id} />
+              </Col>
+            ))
+          : (
+            <p>No cars available for {brand}</p>
+          )}
+      </Row>
+    </Container>
   );
 };
 
