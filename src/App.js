@@ -12,6 +12,8 @@ import SignUp from "./components/SignUp/SignUp";
 import About from "./components/About/About";
 import CarDetail from "./components/CarDetail/CarDetail";
 import Contact from "./components/Contact/Contact";
+import Brands from "./components/Brands/Brands";
+import BrandCars from "./components/Brands/BrandCars";
 
 
 function App() {
@@ -20,6 +22,8 @@ function App() {
       <Header/>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/brands" element={<Brands />} />
+        <Route path="/brands/:brand" element={<BrandCars />} />
         <Route path="/ranges" element={<ListRange />} />
         <Route path="/ranges/:rName" element={<ListCar/>}/>
         <Route path="/cars" element={<ListCar />}/>
