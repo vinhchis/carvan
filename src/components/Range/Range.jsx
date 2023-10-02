@@ -14,7 +14,7 @@ function Range({ range , setRangeIdSelected}) {
       />
       <Card.Body>
         <Card.Title>{range.name}</Card.Title>
-        <Card.Text class="text-start range-desc">{range.desc}</Card.Text>
+        <Card.Text className="text-start range-desc">{range.desc}</Card.Text>
         <Button
           className="button-list"
           variant="primary"

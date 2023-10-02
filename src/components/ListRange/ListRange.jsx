@@ -15,8 +15,8 @@ function ListRange({setRangeIdSelected}) {
     <Container className="list-range">
       <Row>
         {ranges.map((range) => (
-          <Col xl={4} className="my-4">
-            <Range key={range.id} range={range} setRangeIdSelected={setRangeIdSelected}/>
+          <Col key={range.id} xl={4} className="my-4">
+            <Range  range={range} setRangeIdSelected={setRangeIdSelected}/>
           </Col>
         ))}
       </Row>

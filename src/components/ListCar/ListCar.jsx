@@ -7,31 +7,31 @@ import SearchBar from "../Search/SearchBar";
 
 import "./listCar.css";
 import { useParams } from "react-router-dom";
-import CarDB from "../../data/cars.json"
-import RangeDB from "../../data/ranges.json"
-import BrandDB from "../../data/brands.json"
+import CarDB from "../../data/cars.json";
+import RangeDB from "../../data/ranges.json";
+import BrandDB from "../../data/brands.json";
 
-
-
-function ListCar({rangeIdSelected, brandIdSelected}) {
+function ListCar({ rangeIdSelected, brandIdSelected }) {
   // const {rangeN} = useParams();
   const [cars, setCars] = useState(CarDB);
 
   // useEffect(() => {
   //   setCars(CarDB);
   // },[]);
+  // console.log(rangeIdSelected);
+  const getCarsByRangeId = (rangeId) => {
+    const range = RangeDB[rangeId];
+    setCars(cars.filter((car) => car.class === range.name));
+  };
 
   // useEffect(() => {
-  //   const range = RangeDB[rangeIdSelected];
-  //   console.log(rangeIdSelected);
-  //   setCars(cars.filter(car => car.class === range.name));
+  //  getCarsByRangeId(rangeIdSelected);
   // },[rangeIdSelected])
 
   // useEffect(() => {
   //   const brand = BrandDB[brandIdSelected];
   //   setCars(cars.filter(car => car.brand === brand.name));
   // },[brandIdSelected])
-
 
   //  filter by year
   const menuItems = [...new Set(cars.map((car) => car.year))];
@@ -44,9 +44,9 @@ function ListCar({rangeIdSelected, brandIdSelected}) {
 
   return (
     <Container className="list-car">
-      <Row>
+      {/* <Row>
         <SearchBar setItem={setCars} />
-      </Row>
+      </Row> */}
       <Row>
         <Buttons
           filterItem={filterItem}
@@ -58,13 +58,15 @@ function ListCar({rangeIdSelected, brandIdSelected}) {
         <p className="count">There are {cars.length} cars</p>
       </Row>
       <Row>
-        {cars.length > 0
-          ? cars.map((car) => (
-              <Col xl={3} className="mb-3" key={car.id}>
-                <Car carInfo={car}  />
-              </Col>
-            ))
-          : <p>No cars available</p>}
+        {cars.length > 0 ? (
+          cars.map((car) => (
+            <Col xl={3} className="mb-3" key={car.id}>
+              <Car carInfo={car} />
+            </Col>
+          ))
+        ) : (
+          <p>No cars available</p>
+        )}
       </Row>
     </Container>
   );
