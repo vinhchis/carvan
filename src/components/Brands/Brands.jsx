@@ -4,7 +4,7 @@ import brandDB from "../../data/brands.json";
 import { useNavigate } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 
-const Brands = () => {
+const Brands = ({setBrandIdSelected}) => {
   const [brands, setBrands] = useState(brandDB);
   const navigate = useNavigate();
   return (
@@ -26,7 +26,8 @@ const Brands = () => {
                     className="button-list"
                     variant="primary"
                     onClick={() => {
-                      navigate(`/brands/${brand.name}`);
+                      setBrandIdSelected(brand.id);
+                      navigate(`/cars/brand/${brand.id}`);
                     }}
                   >
                     <div>

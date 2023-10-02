@@ -3,7 +3,7 @@ import Card from "react-bootstrap/Card";
 import { useNavigate } from "react-router-dom";
 import "./range.css"
 
-function Range({ range }) {
+function Range({ range , setRangeIdSelected}) {
   const navigate = useNavigate();
   return (
     <Card className="range text-center">
@@ -19,13 +19,14 @@ function Range({ range }) {
           className="button-list"
           variant="primary"
           onClick={() => {
-            navigate(`/ranges/${range.name}`);
+            setRangeIdSelected(range.id);
+            navigate(`/cars/range/${range.id}`)
           }}
         >
           List Car
         </Button>
       </Card.Body>
-      <Card.Footer className="text-muted">n items</Card.Footer>
+      {/* <Card.Footer className="text-muted">n items</Card.Footer> */}
     </Card>
   );
 }

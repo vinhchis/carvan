@@ -8,14 +8,30 @@ import SearchBar from "../Search/SearchBar";
 import "./listCar.css";
 import { useParams } from "react-router-dom";
 import CarDB from "../../data/cars.json"
+import RangeDB from "../../data/ranges.json"
+import BrandDB from "../../data/brands.json"
 
-function ListCar() {
+
+
+function ListCar({rangeIdSelected, brandIdSelected}) {
   // const {rangeN} = useParams();
-  const [cars, setCars] = useState([]);
+  const [cars, setCars] = useState(CarDB);
 
-  useEffect(() => {
-    setCars(CarDB);
-  },[]);
+  // useEffect(() => {
+  //   setCars(CarDB);
+  // },[]);
+
+  // useEffect(() => {
+  //   const range = RangeDB[rangeIdSelected];
+  //   console.log(rangeIdSelected);
+  //   setCars(cars.filter(car => car.class === range.name));
+  // },[rangeIdSelected])
+
+  // useEffect(() => {
+  //   const brand = BrandDB[brandIdSelected];
+  //   setCars(cars.filter(car => car.brand === brand.name));
+  // },[brandIdSelected])
+
 
   //  filter by year
   const menuItems = [...new Set(cars.map((car) => car.year))];
@@ -39,13 +55,16 @@ function ListCar() {
         />
       </Row>
       <Row>
+        <p className="count">There are {cars.length} cars</p>
+      </Row>
+      <Row>
         {cars.length > 0
           ? cars.map((car) => (
-              <Col xl={3} className="mb-3">
-                <Car carInfo={car} key={car.id} />
+              <Col xl={3} className="mb-3" key={car.id}>
+                <Car carInfo={car}  />
               </Col>
             ))
-          : "No Car"}
+          : <p>No cars available</p>}
       </Row>
     </Container>
   );

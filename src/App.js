@@ -17,15 +17,21 @@ import BrandCars from "./components/Brands/BrandCars";
 
 
 function App() {
+  const [rangeIdSelected, setRangeIdSelected] = useState({});
+  const [brandIdSelected, setBrandIdSelected] = useState({});
+
+
   return (
     <>
       <Header/>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/brands" element={<Brands />} />
-        <Route path="/brands/:brand" element={<BrandCars />} />
-        <Route path="/ranges" element={<ListRange />} />
-        <Route path="/ranges/:rName" element={<ListCar/>}/>
+        <Route path="/brands" element={<Brands setBrandIdSelected={setBrandIdSelected}/>} />
+        <Route path="/ranges" element={<ListRange setRangeIdSelected={setRangeIdSelected}/>} />
+        <Route path="/cars/range/:id" element={<ListCar rangeIdSelected={rangeIdSelected}/>}/>
+        {/* <Route path="/cars/brand/:id" element={<BrandCars/>} /> */}
+        <Route path="/cars/brand/:id" element={<ListCar brandIdSelected={brandIdSelected}/>} />
+
         <Route path="/cars" element={<ListCar />}/>
         <Route path="/cars/:id" element={<CarDetail/>} />
         <Route path="/about" element={<About/>}/>

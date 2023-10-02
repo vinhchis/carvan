@@ -1,5 +1,19 @@
 [
   {
+    "id": "0",
+    "brand": "Toyota",
+    "name": "Tundra",
+    "year": "2020",
+    "price": "34500",
+    "class": "Truck",
+    "fuel": "Gasoline",
+    "seat": "6",
+    "registrationDate": "2020-09-28",
+    "odo": "9000",
+    "warrantyDate": "2023-09-28",
+    "tranmission": "Automatic"
+  },
+  {
     "id": "1",
     "brand": "Toyota",
     "name": "Camry",
@@ -4169,20 +4183,6 @@
     "registrationDate": "2020-02-18",
     "odo": "15000",
     "warrantyDate": "2023-02-18",
-    "tranmission": "Automatic"
-  },
-  {
-    "id": "299",
-    "brand": "Toyota",
-    "name": "Tundra",
-    "year": "2020",
-    "price": "34500",
-    "class": "Truck",
-    "fuel": "Gasoline",
-    "seat": "6",
-    "registrationDate": "2020-09-28",
-    "odo": "9000",
-    "warrantyDate": "2023-09-28",
     "tranmission": "Automatic"
   }
 ]

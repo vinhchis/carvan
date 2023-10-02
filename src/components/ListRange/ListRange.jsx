@@ -6,7 +6,7 @@ import Range from "../Range/Range";
 import RangeDB from "../../data/ranges.json";
 import { useEffect, useState } from "react";
 
-function ListRange() {
+function ListRange({setRangeIdSelected}) {
   const [ranges, setRanges] = useState([]);
   useEffect(() => {
     setRanges(RangeDB);
@@ -16,7 +16,7 @@ function ListRange() {
       <Row>
         {ranges.map((range) => (
           <Col xl={4} className="my-4">
-            <Range range={range} />
+            <Range key={range.id} range={range} setRangeIdSelected={setRangeIdSelected}/>
           </Col>
         ))}
       </Row>

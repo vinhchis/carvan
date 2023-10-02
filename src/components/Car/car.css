@@ -1,3 +1,8 @@
+.img-car {
+  height: 323px;
+  object-fit: contain ;
+}
+
 .button-detail {
   align-items: center;
   appearance: none;
