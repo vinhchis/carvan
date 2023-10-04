@@ -25,6 +25,7 @@ function App() {
     <>
       <Header/>
       <Routes>
+      <Route path="/index" element={<Home />} />
         <Route path="/" element={<Home />} />
         <Route path="/brands" element={<Brands setBrandIdSelected={setBrandIdSelected}/>} />
         <Route path="/ranges" element={<ListRange setRangeIdSelected={setRangeIdSelected}/>} />

@@ -1,5 +1,5 @@
 {
-  "homepage": "https://vinhchis.github.com.io/carvan",
+  "homepage": "https://github.com/vinhchis/carvan.git/carvan",
   "dependencies": {
     "bootstrap": "^5.3.2",
     "mdb-react-ui-kit": "^6.3.0",
@@ -12,9 +12,9 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "build": "react-scripts build"
   },
   "browserslist": {
     "production": [
