@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/carvan/static/css/main.c2df018b.css",
-    "main.js": "/carvan/static/js/main.cb349c76.js",
+    "main.js": "/carvan/static/js/main.55e2a5d6.js",
     "static/media/68.png": "/carvan/static/media/68.238a3f961da64fe9cb75.png",
     "static/media/85.png": "/carvan/static/media/85.ca59e4725070e70fe21b.png",
     "static/media/47.png": "/carvan/static/media/47.2f7486d9fc144b108747.png",
@@ -120,10 +120,10 @@
     "static/media/VAN.svg": "/carvan/static/media/VAN.77f1f8cdcb7db2e5f0bb.svg",
     "index.html": "/carvan/index.html",
     "main.c2df018b.css.map": "/carvan/static/css/main.c2df018b.css.map",
-    "main.cb349c76.js.map": "/carvan/static/js/main.cb349c76.js.map"
+    "main.55e2a5d6.js.map": "/carvan/static/js/main.55e2a5d6.js.map"
   },
   "entrypoints": [
     "static/css/main.c2df018b.css",
-    "static/js/main.cb349c76.js"
+    "static/js/main.55e2a5d6.js"
   ]
 }
