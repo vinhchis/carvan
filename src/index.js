@@ -8,14 +8,15 @@ import Footer from "./components/Footer/Footer";
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Header/>
-    <BrowserRouter>
+    {/* <BrowserRouter>
       <App />
-    </BrowserRouter>
-    {/* <HashRouter>
+    </BrowserRouter> */}
+    <HashRouter>
+      <Header />
       <App />
-    </HashRouter> */}
-    <Footer/>
+      <Footer />
+
+    </HashRouter>
   </React.StrictMode>
 
 );
