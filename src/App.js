@@ -4,8 +4,6 @@ import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import Home from "./components/Home/Home";
 import ListRange from "./components/ListRange/ListRange";
-import Header from "./components/Header/Header";
-import Footer from "./components/Footer/Footer";
 import ListCar from "./components/ListCar/ListCar";
 import SignIn from "./components/SignIn/SignIn";
 import SignUp from "./components/SignUp/SignUp";
@@ -23,25 +21,25 @@ function App() {
 
   return (
     <>
-      <Header/>
       <Routes>
-      <Route path="/index" element={<Home />} />
+
         <Route path="/" element={<Home />} />
-        <Route path="/brands" element={<Brands setBrandIdSelected={setBrandIdSelected}/>} />
-        <Route path="/ranges" element={<ListRange setRangeIdSelected={setRangeIdSelected}/>} />
-        <Route path="/cars/range/:id" element={<ListCar rangeIdSelected={rangeIdSelected}/>}/>
+        <Route path="/carvan" element={<Home />} />
+
+
+        <Route path="/brands" element={<Brands setBrandIdSelected={setBrandIdSelected} />} />
+        <Route path="/ranges" element={<ListRange setRangeIdSelected={setRangeIdSelected} />} />
+        <Route path="/cars/range/:id" element={<ListCar rangeIdSelected={rangeIdSelected} />} />
         {/* <Route path="/cars/brand/:id" element={<BrandCars/>} /> */}
-        <Route path="/cars/brand/:id" element={<ListCar brandIdSelected={brandIdSelected}/>} />
+        <Route path="/cars/brand/:id" element={<ListCar brandIdSelected={brandIdSelected} />} />
 
-        <Route path="/cars" element={<ListCar />}/>
-        <Route path="/cars/:id" element={<CarDetail/>} />
-        <Route path="/about" element={<About/>}/>
-        <Route path="/contact" element={<Contact/>}/>
-        <Route path="/signIn" element={<SignIn/>}/>
-        <Route path="/signUp" element={<SignUp/>}/>
-
+        <Route path="/cars" element={<ListCar />} />
+        <Route path="/cars/:id" element={<CarDetail />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/signIn" element={<SignIn />} />
+        <Route path="/signUp" element={<SignUp />} />
       </Routes>
-      <Footer/>
     </>
   );
 }
