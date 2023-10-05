@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/carvan/static/css/main.c2df018b.css",
-    "main.js": "/carvan/static/js/main.4ca780a6.js",
+    "main.css": "/carvan/static/css/main.303c58ef.css",
+    "main.js": "/carvan/static/js/main.cba4bbe0.js",
     "static/media/68.png": "/carvan/static/media/68.238a3f961da64fe9cb75.png",
     "static/media/85.png": "/carvan/static/media/85.ca59e4725070e70fe21b.png",
     "static/media/47.png": "/carvan/static/media/47.2f7486d9fc144b108747.png",
@@ -119,11 +119,11 @@
     "static/media/5.png": "/carvan/static/media/5.6c406cfe6431c451f166.png",
     "static/media/VAN.svg": "/carvan/static/media/VAN.77f1f8cdcb7db2e5f0bb.svg",
     "index.html": "/carvan/index.html",
-    "main.c2df018b.css.map": "/carvan/static/css/main.c2df018b.css.map",
-    "main.4ca780a6.js.map": "/carvan/static/js/main.4ca780a6.js.map"
+    "main.303c58ef.css.map": "/carvan/static/css/main.303c58ef.css.map",
+    "main.cba4bbe0.js.map": "/carvan/static/js/main.cba4bbe0.js.map"
   },
   "entrypoints": [
-    "static/css/main.c2df018b.css",
-    "static/js/main.4ca780a6.js"
+    "static/css/main.303c58ef.css",
+    "static/js/main.cba4bbe0.js"
   ]
 }
